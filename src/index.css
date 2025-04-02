@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root[data-theme="light"] {
+    --color-bg-primary: #f9fafb;
+    --color-bg-secondary: #ffffff;
+    --color-bg-tertiary: #f3f4f6;
+    --color-text-primary: #111827;
+    --color-text-secondary: #4b5563;
+    --color-text-tertiary: #6b7280;
+    --color-border: #e5e7eb;
+    --color-accent: #3b82f6;
+    --color-accent-hover: #2563eb;
+    --color-success: #22c55e;
+    --color-error: #ef4444;
+    --color-warning: #f59e0b;
+    --color-navbar: #ffffff;
+    --color-navbar-hover: #f3f4f6;
+    --color-sidebar: #ffffff;
+    --color-sidebar-hover: #f3f4f6;
+    --color-card: #ffffff;
+    --color-card-hover: #f3f4f6;
+  }
+
+  :root[data-theme="dark"] {
+    --color-bg-primary: #111827;
+    --color-bg-secondary: #1f2937;
+    --color-bg-tertiary: #374151;
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #e5e7eb;
+    --color-text-tertiary: #d1d5db;
+    --color-border: #374151;
+    --color-accent: #60a5fa;
+    --color-accent-hover: #3b82f6;
+    --color-success: #34d399;
+    --color-error: #f87171;
+    --color-warning: #fbbf24;
+    --color-navbar: #1f2937;
+    --color-navbar-hover: #374151;
+    --color-sidebar: #1f2937;
+    --color-sidebar-hover: #374151;
+    --color-card: #1f2937;
+    --color-card-hover: #374151;
+  }
+
+  body {
+    @apply bg-[var(--color-bg-primary)];
+    @apply text-[var(--color-text-primary)];
+  }
+
+  /* Custom checkbox styles */
+  input[type="checkbox"] {
+    @apply rounded border-gray-300;
+    @apply text-[var(--color-accent)] focus:ring-[var(--color-accent)];
+    @apply transition-colors duration-200;
+  }
+
+  /* Table styles */
+  .table-container {
+    @apply w-full overflow-x-auto;
+    @apply border border-[var(--color-border)] rounded-lg;
+    @apply bg-white;
+  }
+
+  /* Apply theme colors to all cards and sections */
+  .bg-white {
+    @apply bg-[var(--color-card)];
+  }
+
+  /* Ensure text colors adapt to theme */
+  .text-gray-600 {
+    @apply text-[var(--color-text-secondary)];
+  }
+
+  .text-gray-900 {
+    @apply text-[var(--color-text-primary)];
+  }
+
+  /* Chart theme colors */
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    @apply stroke-[var(--color-border)];
+  }
+
+  .recharts-text {
+    @apply fill-[var(--color-text-secondary)];
+  }
+
+  .recharts-default-tooltip {
+    @apply bg-[var(--color-bg-secondary)] !important;
+    @apply border-[var(--color-border)] !important;
+    @apply text-[var(--color-text-primary)] !important;
+  }
+  
+  /* Textarea transition */
+  .transition-height {
+    transition: height 0.2s ease;
+  }
+
+  /* Campaign tabs */
+  .campaign-tab {
+    @apply flex items-center gap-2 px-6 py-4 text-base font-medium transition-colors relative;
+    @apply focus:outline-none;
+  }
+
+  .campaign-tab.active {
+    @apply text-white bg-[#0284C7];
+  }
+
+  .campaign-tab:not(.active) {
+    @apply text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)];
+  }
+
+  .campaign-tab.active svg {
+    @apply text-white;
+  }
+
+  .campaign-tab:not(.active) svg {
+    @apply text-[var(--color-text-secondary)];
+  }
+}

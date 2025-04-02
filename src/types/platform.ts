@@ -1,0 +1,1 @@
+export type Platform = 'google' | 'facebook' | 'linkedin';
